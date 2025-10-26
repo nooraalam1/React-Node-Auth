@@ -1,9 +1,9 @@
 ## 📂 Project Structure
 
-React-Node-Auth/
-│
-├── client/           # React frontend
-└── server/           # Node.js backend
+   React-Node-Auth/
+   │
+   ├── client/           # React frontend
+   └── server/           # Node.js backend
 
 ## 🚀 Getting Started
 
