@@ -5,7 +5,7 @@ const app = express();
 
 
 
-app.use(cors());              
+app.use(cors());
 app.use(express.json());
 
 app.listen(8081, () => {
@@ -13,21 +13,22 @@ app.listen(8081, () => {
 });
 
 const db = mysql.createConnection({
-  host: 'localhost',     
-  user: 'root',          
-  password: '',          
-  database: 'react_node_auth'     
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'react_node_auth'
 });
 
 
-app.post('/register',(req,res)=>{
-const {name,email,password} = req.body
-const q = 'INSERT INTO users( name, email,password) VALUES (?,?,?)'
-db.query(q, [name,email,password],(err,data)=>{
-if(err) return res.json(err)
-return res.json(data) 
+app.post('/register', (req, res) => {
+  const { name, email, password } = req.body
+  const q = 'INSERT INTO users( name, email,password) VALUES (?,?,?)'
+  db.query(q, [name, email, password], (err, data) => {
+    if (err) return res.json(err)
+    return res.json(data)
+  })
 })
-})
+
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;

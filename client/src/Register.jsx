@@ -9,7 +9,7 @@ export default function Register() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('http://localhost:8081/register', { name, email, password }) 
+    axios.post('http://localhost:8081/register', { name, email, password })
       .then(res => {
         console.log('Registration successful:', res.data)
         alert('Registration successful!')
